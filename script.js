@@ -1,3 +1,63 @@
+const menuIcon = document.getElementById("menu-icon");
+const navbar = document.getElementById("navbar");
+
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active"); +
+    menuIcon.classList.toggle("close");
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card-plan");
+    let currentIndex = 0;
+
+    function showCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.remove("active");
+            if (i === index) {
+                card.classList.add("active");
+            }
+        });
+    }
+
+    const prevButton = document.querySelector(".prevbtn");
+    const nextButton = document.querySelector(".nextbtn");
+
+    function updateButtonStates() {
+        if (currentIndex === 0) {
+            prevButton.style.opacity = 0;
+        } else {
+            prevButton.style.opacity = 1;
+        }
+
+        if (currentIndex === cards.length - 1) {
+            nextButton.style.opacity = 0;
+        } else {
+            nextButton.style.opacity = 1;
+        }
+    }
+
+    prevButton.addEventListener("click", function () {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        showCard(currentIndex);
+        updateButtonStates();
+    });
+
+    nextButton.addEventListener("click", function () {
+        currentIndex = (currentIndex + 1) % cards.length;
+        showCard(currentIndex);
+        updateButtonStates();
+    });
+
+    // Appel initial pour désactiver le bouton "Précédent" au début
+    updateButtonStates();
+});
+
+
+
+
+
 const questions = document.querySelectorAll(".question");
 
 questions.forEach((question) => {
@@ -7,7 +67,7 @@ questions.forEach((question) => {
 
         if (answer.style.display === "block") {
             answer.style.display = "none";
-            imgElement.src="images/down.png";
+            imgElement.src = "images/down.png";
         } else {
             answer.style.display = "block";
             imgElement.src = "images/up.png";
@@ -15,42 +75,105 @@ questions.forEach((question) => {
     });
 });
 
-const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card-review');
+const batchLength = 3; // Nombre de cartes à afficher à la fois
+let currentBatchIndex = 0;
 
-    let currentBatchIndex = 0;
-
-    document.getElementById('prev').style.display = 'none';
-
-    document.getElementById('next').addEventListener('click', () => {
-        if (currentBatchIndex < cards.length - 3) {
-            for (let i = currentBatchIndex; i < currentBatchIndex + 3; i++) {
-                cards[i].classList.remove('active');
-            }
-            currentBatchIndex += 3;
-            for (let i = currentBatchIndex; i < currentBatchIndex + 3; i++) {
-                cards[i].classList.add('active');
-            }
-            document.getElementById('prev').style.display = 'block';
+function showBatch(startIndex) {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = 'none';
+    }
+    for (let i = startIndex; i < startIndex + batchLength; i++) {
+        if (cards[i]) {
+            cards[i].style.display = 'block';
         }
+    }
+}
 
-        if (currentBatchIndex >= cards.length - 3) {
-            document.getElementById('next').style.display = 'none';
-        }
-    });
+function updateButtonsVisibility() {
+    const nextButton = document.getElementById('next');
+    const prevButton = document.getElementById('prev');
+    
+    if (currentBatchIndex === 0) {
+        prevButton.style.opacity = 0;
+    } else {
+        prevButton.style.opacity = 1;
+    }
+    
+    if (currentBatchIndex + batchLength >= cards.length) {
+        nextButton.style.opacity = 0;
+    } else {
+        nextButton.style.opacity = 1;
+    }
+}
 
-    document.getElementById('prev').addEventListener('click', () => {
-        if (currentBatchIndex >= 3) {
-            for (let i = currentBatchIndex; i < currentBatchIndex + 3; i++) {
-                cards[i].classList.remove('active');
-            }
-            currentBatchIndex -= 3;
-            for (let i = currentBatchIndex; i < currentBatchIndex + 3; i++) {
-                cards[i].classList.add('active');
-            }
-            document.getElementById('next').style.display = 'block';
-        }
+updateButtonsVisibility();
+showBatch(currentBatchIndex);
 
-        if (currentBatchIndex < 3) {
-            document.getElementById('prev').style.display = 'none';
-        }
-    });
+document.getElementById('next').addEventListener('click', () => {
+    if (currentBatchIndex + batchLength < cards.length) {
+        currentBatchIndex += batchLength;
+        showBatch(currentBatchIndex);
+        updateButtonsVisibility();
+    }
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    if (currentBatchIndex - batchLength >= 0) {
+        currentBatchIndex -= batchLength;
+        showBatch(currentBatchIndex);
+        updateButtonsVisibility();
+    }
+});
+
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const cards = document.querySelectorAll(".card-plan");
+//     let currentIndex = 0;
+
+//     function showCard(index) {
+//         cards.forEach((card, i) => {
+//             card.classList.remove("active");
+//             if (i === index) {
+//                 card.classList.add("active");
+//             }
+//         });
+//     }
+
+//     const prevButton = document.querySelector(".prevbtn");
+//     const nextButton = document.querySelector(".nextbtn");
+
+//     function updateButtonStates() {
+//         if (currentIndex === 0) {
+//             prevButton.style.opacity = 0;
+//         } else {
+//             prevButton.style.opacity = 1;
+//         }
+
+//         if (currentIndex === cards.length - 1) {
+//             nextButton.style.opacity = 0;
+//         } else {
+//             nextButton.style.opacity = 1;
+//         }
+//     }
+
+//     prevButton.addEventListener("click", function () {
+//         currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+//         showCard(currentIndex);
+//         updateButtonStates();
+//     });
+
+//     nextButton.addEventListener("click", function () {
+//         currentIndex = (currentIndex + 1) % cards.length;
+//         showCard(currentIndex);
+//         updateButtonStates();
+//     });
+
+//     // Appel initial pour désactiver le bouton "Précédent" au début
+//     updateButtonStates();
+// });
+
+

@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>FitZone | salle de sport</title>
 </head>
@@ -29,27 +27,32 @@
             <div class="logo">
                 <h3>Fit<span>Zone</span></h3>
             </div>
-            <div class="bx bx-menu" id="menu-icon"></div>
-            <!-- <div class="navbar"> -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="activite.html">Activité</a></li>
-                    <li><a href="gallerie.html">Gallerie</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="inscription-button">
+            <div class="menu-icon" id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="activite.html">Activité</a></li>
+                        <li><a href="gallerie.html">Gallerie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" id="btn-signup">S'inscrire</a></li>
+                    </ul>
+                </nav>
+            <div class="inscription-button btn-respo">
                 <a href="contact.html">S'inscrire</a>
             </div>
             <!-- </div> -->
         </header>
+
         <div class="classes-section">
             <div class="title bg-title">Our classes</div>
             <div class="activites">
 
 
-                <div class="flex1">
+                <div class="flex1 ">
 
                     <div class="img4 ">
                         <img src="images/activite.png" alt="">
@@ -81,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="flex2">
+                <div class="flex2 ">
 
                     <div class="img6 ">
                         <img src="images/activite2.png" alt="">
@@ -141,13 +144,16 @@
                 </div>
             </div>
         </div>
+
+
+
+
         <div class="coachs-section">
             <div class="title">
                 Our coachs
             </div>
             <div class="list-coachs">
-
-                <div class="coach">
+                <div class="coach ">
                     <img src="images/coach1.png" alt="">
                     <div class="namecoach">Full name</div>
                 </div>
@@ -169,7 +175,10 @@
         <div class="plans-section">
             <div class="title">Our plans</div>
             <div class="list-items">
-                <div class="card">
+                <div class="navigation">
+                    <img src="images/left.png" class="prevbtn" alt="Previous"></img>
+                </div>
+                <div class="card card-plan active">
                     <div class="plan-title">Premium</div>
                     <p>-Plan alimentaire personnalisé
                         -Plan d’entrainement personnalisé et périodisé
@@ -180,8 +189,8 @@
                     </p>
                     <div class="price">399.99$ / MOIS</div>
                 </div>
-                <div class="card">
-                    <div class="plan-title">Premium</div>
+                <div class="card card-plan">
+                    <div class="plan-title">Premium2</div>
                     <p>-Plan alimentaire personnalisé
                         -Plan d’entrainement personnalisé et périodisé
                         -Protocole de suppléments
@@ -191,8 +200,8 @@
                     </p>
                     <div class="price">399.99$ / MOIS</div>
                 </div>
-                <div class="card">
-                    <div class="plan-title">Premium</div>
+                <div class="card card-plan">
+                    <div class="plan-title">Premium3</div>
                     <p>-Plan alimentaire personnalisé
                         -Plan d’entrainement personnalisé et périodisé
                         -Protocole de suppléments
@@ -201,14 +210,21 @@
                         -Accès à notre Guides des équivalences alimentaires
                     </p>
                     <div class="price">399.99$ / MOIS</div>
+                </div>
+                <div class="navigation">
+                    <img src="images/right.png" class="nextbtn" alt="Next"></img>
                 </div>
             </div>
         </div>
+        
+        
 
-        <footer>
-            <div class="copyright">Copyright ©2022 All rights reserved</div>
-            <div class="conditions">Terms & Conditions | Privacy Policy</div>
-        </footer>
+        
     </div>
-
+    <footer>
+        <div class="copyright">Copyright ©2022 All rights reserved</div>
+        <div class="conditions">Terms & Conditions | Privacy Policy</div>
+    </footer>
+<script src="script.js"></script>
 </body>
+</html>

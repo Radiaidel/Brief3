@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>FitZone | salle de sport</title>
 </head>
@@ -30,17 +28,21 @@
             <div class="logo">
                 <h3>Fit<span>Zone</span></h3>
             </div>
-            <div class="bx bx-menu" id="menu-icon"></div>
-            <!-- <div class="navbar"> -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="activite.html">Activité</a></li>
-                    <li><a href="gallerie.html">Gallerie</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="inscription-button">
+            <div class="menu-icon" id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="activite.html">Activité</a></li>
+                        <li><a href="gallerie.html">Gallerie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" id="btn-signup">S'inscrire</a></li>
+                    </ul>
+                </nav>
+            <div class="inscription-button btn-respo">
                 <a href="contact.html">S'inscrire</a>
             </div>
             <!-- </div> -->
@@ -84,7 +86,10 @@
         <div class="plans-section">
             <div class="title">Our plans</div>
             <div class="list-items">
-                <div class="card">
+                <div class="navigation">
+                    <img src="images/left.png" class="prevbtn" alt="Previous"></img>
+                </div>
+                <div class="card card-plan active">
                     <div class="plan-title">Premium</div>
                     <p>-Plan alimentaire personnalisé
                         -Plan d’entrainement personnalisé et périodisé
@@ -95,8 +100,8 @@
                     </p>
                     <div class="price">399.99$ / MOIS</div>
                 </div>
-                <div class="card">
-                    <div class="plan-title">Premium</div>
+                <div class="card card-plan">
+                    <div class="plan-title">Premium2</div>
                     <p>-Plan alimentaire personnalisé
                         -Plan d’entrainement personnalisé et périodisé
                         -Protocole de suppléments
@@ -106,8 +111,8 @@
                     </p>
                     <div class="price">399.99$ / MOIS</div>
                 </div>
-                <div class="card">
-                    <div class="plan-title">Premium</div>
+                <div class="card card-plan">
+                    <div class="plan-title">Premium3</div>
                     <p>-Plan alimentaire personnalisé
                         -Plan d’entrainement personnalisé et périodisé
                         -Protocole de suppléments
@@ -116,14 +121,18 @@
                         -Accès à notre Guides des équivalences alimentaires
                     </p>
                     <div class="price">399.99$ / MOIS</div>
+                </div>
+                <div class="navigation">
+                    <img src="images/right.png" class="nextbtn" alt="Next"></img>
                 </div>
             </div>
         </div>
+        
 
 
 
         <div class="our-classes">
-            <div class="title">Our plans</div>
+            <div class="title">Our activities</div>
             <div class="pic-activities">
                 <div class="img1 image">
                     <img src="images/musculation.png" alt="">
@@ -182,7 +191,8 @@
                 <div class="carousel-controls">
                     <img src="images/left.png" id="prev"></img>
                 </div>
-                <div class="card active">
+                
+                <div class="card card-review active">
                     <div class="review">
 
                         <img src="images/review-profile.png" alt="profile main-picture">
@@ -200,7 +210,7 @@
                             labore et dolore magna aliqua.</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card card-review">
                     <div class="review">
 
                         <img src="images/review-profile.png" alt="profile main-picture">
@@ -218,7 +228,29 @@
                             labore et dolore magna aliqua.</p>
                     </div>
                 </div>
-                <div class="card">
+
+                <div class="card card-review">
+                    <div class="review">
+
+                        <img src="images/review-profile.png" alt="profile main-picture">
+                        <div class="name">Full name</div>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+
+
+
+                <div class="card card-review">
                     <div class="review">
 
                         <img src="images/review-profile.png" alt="profile main-picture">
