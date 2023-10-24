@@ -2,11 +2,19 @@ const menuIcon = document.getElementById("menu-icon");
 const navbar = document.getElementById("navbar");
 
 menuIcon.addEventListener("click", () => {
-    navbar.classList.toggle("active"); +
+    navbar.classList.toggle("active");
     menuIcon.classList.toggle("close");
 });
 
+const header = document.querySelector("header");
 
+window.addEventListener("scroll", ()=> {
+    if (window.scrollY > 0) {
+        header.style.backgroundColor = 'white';
+    } else {
+        header.style.backgroundColor = 'transparent';
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".card-plan");
@@ -50,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateButtonStates();
     });
 
-    // Appel initial pour désactiver le bouton "Précédent" au début
     updateButtonStates();
 });
 
