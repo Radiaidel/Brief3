@@ -129,7 +129,9 @@ nav ul li a {
     text-align: center;
     width: 100%;
 }
-
+.navigation{
+    display: none;
+}
 .title {
     display: block;
     font-size: 40px;
@@ -174,7 +176,7 @@ nav ul li a {
     text-align: center;
 }
 
-.navigation {
+.prevbtn , .nextbtn {
     opacity: 0;
 }
 
@@ -504,8 +506,7 @@ footer {
     width: 50vw;
 }
 
-input[type=text],
-textarea {
+input[type=text],select {
     font-size: 24px;
     width: 100%;
     padding: 1rem;
@@ -534,42 +535,58 @@ input[type=button] {
     background-color: var(--base-color);
 }
 
-.galflex {
-    width: 66%;
+.carrousel{
     display: flex;
-    margin: 5em auto;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.galcarr {
+    width: 100%;
+    display: flex;
+    height: 90vh;
+    overflow-x: auto;
+}
+
+.galcarr img {
+    width: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
 }
 
 .video iframe {
     width: 97%;
+    height:70vh;
 }
 
-
+.informations{
+padding: 30px 0;
+}
 .containerr {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: var(--base-color);
     width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
 }
 
-.map {
-    width: 60%;
-    padding: 20px;
-}
 
 .info-contact {
     display: flex;
-    align-items: center;
-    width: 40%;
-}
-
-.social-icons {
-    display: flex;
     flex-direction: column;
+    gap: 20px;
+    width: 25%;
 }
 
+.icons a{
+    display: flex;
+    align-items: center;
+    color: #333333;
+}
 .social-icons a {
     color: #000;
 }
@@ -638,21 +655,11 @@ input[type=button] {
         width: 100%;
     }
 
-    .navigation {
-        opacity: 1;
-    }
 
     .list-items .card-plan {
-        display: none;
-        width: 70%;
+        width: 30%;
     }
 
-    .card-plan.active {
-        display: block;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-    }
 
     .pic-activities {
         display: flex;
@@ -687,12 +694,30 @@ input[type=button] {
     .flex1 img,
     .flex2 img,
     .flex3 img {
-        height: 35em;
+        height: 27em;
     }
 
     .form-inscription {
         width: 90vw;
 
+    }
+    .containerr {
+        background-color: var(--base-color);
+        width: 90%;
+    }
+    .carrousel{
+        padding: 30px 0;
+        }
+    
+    .galcarr {
+        width: 100%;
+        height:fit-content ;
+    }
+    .carousel-btn img{
+      width: 3em;
+    }
+    .video iframe{
+        height: 40vh;
     }
 }
 
@@ -715,11 +740,13 @@ input[type=button] {
         overflow-x: scroll;
         gap: 20px;
     }
-
-    .navigation {
-        width: 0.5em;
+    .list-items{
+        flex-direction: column;
+        gap: 30px;
     }
-
+    .list-items .card-plan {
+        width: 90%;
+    }
     .ready-to-join {
         width: 95%;
     }
@@ -731,14 +758,28 @@ input[type=button] {
     .list-cards {
         display: flex;
         flex-direction: column;
+        gap: 2em;
     }
-
+    .prevbtn {
+        transform: rotate(-180);
+    }
     .card-review {
         width: 80%;
     }
 
     .faq-list {
         width: 90%;
+    }
+    .containerr{
+        flex-direction: column;
+        gap: 40px;
+    }
+    .info-contact {
+        gap: 20px;
+        width: 100%;
+    }
+    .map iframe{
+        width: 100%;
     }
 
     footer {
@@ -751,8 +792,7 @@ input[type=button] {
         padding-bottom: 20px;
     }
 
-    input[type='text'],
-    textarea {
+    input[type='text']{
         font-size: 16px;
     }
 }

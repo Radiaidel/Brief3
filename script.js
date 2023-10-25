@@ -16,52 +16,39 @@ window.addEventListener("scroll", ()=> {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll(".card-plan");
+
+document.addEventListener("DOMContentLoaded", function() {
+    const galcarr = document.querySelector('.galcarr');
+    const images = galcarr.querySelectorAll('img');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
     let currentIndex = 0;
 
-    function showCard(index) {
-        cards.forEach((card, i) => {
-            card.classList.remove("active");
+    function showImage(index) {
+        images.forEach((image, i) => {
             if (i === index) {
-                card.classList.add("active");
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
             }
         });
     }
 
-    const prevButton = document.querySelector(".prevbtn");
-    const nextButton = document.querySelector(".nextbtn");
-
-    function updateButtonStates() {
-        if (currentIndex === 0) {
-            prevButton.style.opacity = 0;
-        } else {
-            prevButton.style.opacity = 1;
-        }
-
-        if (currentIndex === cards.length - 1) {
-            nextButton.style.opacity = 0;
-        } else {
-            nextButton.style.opacity = 1;
-        }
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
     }
 
-    prevButton.addEventListener("click", function () {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-        showCard(currentIndex);
-        updateButtonStates();
-    });
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
 
-    nextButton.addEventListener("click", function () {
-        currentIndex = (currentIndex + 1) % cards.length;
-        showCard(currentIndex);
-        updateButtonStates();
-    });
+    nextButton.addEventListener('click', nextImage);
+    prevButton.addEventListener('click', prevImage);
 
-    updateButtonStates();
+    showImage(currentIndex); // Show the initial image
 });
-
-
 
 
 
@@ -82,8 +69,67 @@ questions.forEach((question) => {
     });
 });
 
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const cards = document.querySelectorAll(".card-plan");
+//     let currentIndex = 0;
+
+//     function showCard(index) {
+//         cards.forEach((card, i) => {
+//             card.classList.remove("active");
+//             if (i === index) {
+//                 card.classList.add("active");
+//             }
+//         });
+//     }
+
+//     const prevButton = document.querySelector(".prevbtn");
+//     const nextButton = document.querySelector(".nextbtn");
+
+//     function updateButtonStates() {
+//         if (currentIndex === 0) {
+//             prevButton.style.opacity = 0;
+//         } else {
+//             prevButton.style.opacity = 1;
+//         }
+
+//         if (currentIndex === cards.length - 1) {
+//             nextButton.style.opacity = 0;
+//         } else {
+//             nextButton.style.opacity = 1;
+//         }
+//     }
+
+//     prevButton.addEventListener("click", function () {
+//         currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+//         showCard(currentIndex);
+//         updateButtonStates();
+//     });
+
+//     nextButton.addEventListener("click", function () {
+//         currentIndex = (currentIndex + 1) % cards.length;
+//         showCard(currentIndex);
+//         updateButtonStates();
+//     });
+
+//     updateButtonStates();
+// });
+
+
 const cards = document.querySelectorAll('.card-review');
-const batchLength = 3; // Nombre de cartes à afficher à la fois
+
+let batchLength;
+  
+window.addEventListener('resize',()=>{
+    if (window.innerWidth <= 500) {
+        batchLength = 1;
+    } else {
+        batchLength = 3;
+    }
+});
+
+
 let currentBatchIndex = 0;
 
 function showBatch(startIndex) {
@@ -133,6 +179,35 @@ document.getElementById('prev').addEventListener('click', () => {
     }
 });
 
+// function validateForm() {
+//     // Regex patterns for validation
+//     const namePattern = /^[A-Za-z\s]{3,}$/;
+//     const cinPattern = /^[0-9]{12}$/;
+//     const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+//     const phonePattern = /^\+212[0-9]{9}$/;
+
+//     // Get input values
+//     const fullName = document.getElementById("full-name").value;
+//     const age = document.getElementById("age").value;
+//     const cin = document.getElementById("cin").value;
+//     const telephone = document.getElementById("telephone").value;
+//     const email = document.getElementById("email").value;
+
+//     // Validate input using regex
+//     const isFullNameValid = namePattern.test(fullName);
+//     const isCINValid = cinPattern.test(cin);
+//     const isEmailValid = emailPattern.test(email);
+//     const isPhoneValid = phonePattern.test(telephone);
+
+//     // Check if all fields are valid
+//     if (isFullNameValid && isCINValid && isEmailValid && isPhoneValid) {
+//         // All inputs are valid, you can submit the form or take further action
+//         alert("Form submitted successfully!");
+//     } else {
+//         // Display an error message or highlight invalid fields
+//         alert("Please fill out the form correctly.");
+//     }
+// }
 
 
 
