@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,6 @@
         <link href='https://fonts.googleapis.com/css?family=Calistoga' rel='stylesheet'>
     
         <link rel="stylesheet" href="style.css">
-    
-    
-    
     
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -91,21 +88,24 @@
 
         <div class="bg-inscription">
             <div class="title insc-title">Prêt à commencer votre transformation?</div>
-            <form class="form-inscription">
+      
+
+            <form id="registration-form"  class="form-inscription">
                 <div class="oneline">
-                    <input type="text" id="first-name" placeholder="First name">
-                    <input type="text" id="last-name" placeholder="last name">
+
+                    <input type="text" id="first-name" placeholder="Prénom">
+                    <input type="text" id="last-name" placeholder="Nom">
                 </div>
-                <input type="text" id="cin" placeholder="CIN">
-                <input type="text" id="telephone" placeholder="Telephone">
+                <input type="text" id="cin" placeholder="Numéro de CIN">
+                <input type="text" id="telephone" placeholder="Téléphone">
                 <input type="text" id="email" placeholder="Email">
                 <select id="plans">
-                    <option value="none">none</option>
-                    <option value="regulier">regulier</option>
-                    <option value="premium">premium</option>
-                    <option value="ultimate">ultimate</option>
-                  </select>
-                <input type="button" value="Submit" onclick="validateForm()">
+                    <option value="none">Sélectionnez un abonnement</option>
+                    <option value="regular">Abonnement régulier</option>
+                    <option value="premium">Abonnement premium</option>
+                    <option value="ultimate">Abonnement ultimate</option>
+                </select>
+                <input type="button" value="S'inscrire" onclick="validateForm()">
             </form>
         </div>
 <div class="informations">
