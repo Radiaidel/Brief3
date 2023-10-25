@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     nextButton.addEventListener('click', nextImage);
     prevButton.addEventListener('click', prevImage);
 
-    showImage(currentIndex); // Show the initial image
+    showImage(currentIndex); 
 });
 
 
@@ -91,7 +91,7 @@ window.addEventListener('resize', () => {
     updateButtonsVisibility();
 });
 
-updateBatchLength(); // Appel initial pour définir batchLength
+updateBatchLength(); 
 
 let currentBatchIndex = 0;
 
