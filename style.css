@@ -795,4 +795,8 @@ padding: 30px 0;
     .video iframe{
         height: 30vh;
     }
+    .reviews-section .list-cards{
+        flex-direction: column;
+        gap: 20px;
+    }
 }
