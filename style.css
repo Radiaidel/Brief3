@@ -156,7 +156,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .card:hover {
@@ -339,7 +339,7 @@ nav ul li a {
 
 .list-cards {
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content:space-; */
     align-items: center;
 }
 
@@ -376,12 +376,17 @@ nav ul li a {
     width: 25px;
     float: right;
 }
+.question{
+    display: flex;
+    align-items: center;
+}
 
 .question,
 .answer {
     background-color: var(--base-color);
     padding: 1rem 2rem;
     border-radius: 5px;
+
 }
 
 .question {
