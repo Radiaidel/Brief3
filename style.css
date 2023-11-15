@@ -339,7 +339,7 @@ nav ul li a {
 
 .list-cards {
     display: flex;
-    /* justify-content:space-; */
+    justify-content:space-around;
     align-items: center;
 }
 
@@ -378,6 +378,7 @@ nav ul li a {
 }
 .question{
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
